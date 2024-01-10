@@ -1,12 +1,12 @@
-WITH products as {
+WITH products AS (
     SELECT
         product_id,
-        departments AS product_department,
+        department AS product_department,
         cost AS product_cost,
         retail_price AS product_retail_price,
 
-    FROM {{'stg_ecommerce__products'}}
-}
+    FROM {{ref('stg_ecommerce__products')}}
+)
 
 SELECT
 
